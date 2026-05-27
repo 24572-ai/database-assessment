@@ -43,7 +43,7 @@ def print_all_aircraft_by_number():
 
 
 
-data = input("What would you like to learn about Air NZ planes?\n1. print all aircraft\n2. print aircraft by speed\n3. print all aircraft by the highest amount in the fleet\n4. leave\n")
+data = input("What would you like to learn about Air NZ planes?\n1. print all aircraft\n2. print aircraft by speed\n3. print all aircraft by the highest amount in the fleet\n4. help\n5. leave\n")
 if data == "1":
     print_all_aircraft()
 elif data == "2":
@@ -51,6 +51,8 @@ elif data == "2":
 elif data == "3":
     print_all_aircraft_by_number()
 elif data == "4":
+    print('Name - Name of aircraft\n pax_capacity - how many passenger the aircraft can hold defined by the amount of seats\n range - aircrafts range in kilometers\n cruising_speed - the speed the aircraft usually flies at in knots at cruising altitude\n max_takeoff_weight - the maximum weight the aircraft can be when taking off in kg\n takeoff_speed - the speed the aircraft needs to reach to take off in knots\n landing_speed - minimum speed to lands in knots\n no_of_aircraft - how many of this type of plane are in the airnz fleet')
+elif data == "5":
     print("goodbye")
 
 
