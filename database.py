@@ -54,7 +54,7 @@ def common_info():
         print(f"{airnzaircraft[1]:<20}"f"{airnzaircraft[2]:<15}"f"{airnzaircraft[3]:<15}"f"{airnzaircraft[4]:<12}"f"{airnzaircraft[8]:<12}")
     db.close()
 
-
+#main code to ask user what they want to do and call the correct function
 data = input("What would you like to learn about Air NZ planes?\n1. print all aircraft\n2. print aircraft by speed\n3. print all aircraft by the highest amount in the fleet\n4. help\n5. find out the most useful knowledge\n6. exit\n")
 if data == "1":
     print_all_aircraft()
