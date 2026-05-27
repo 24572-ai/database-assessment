@@ -42,8 +42,20 @@ def print_all_aircraft_by_number():
     db.close()
 
 
+def common_info():
+    #prints all aircraft data sorted by number of planes, passengers, range, name
+    db = sqlite3.connect(DATABASE)
+    cursor = db.cursor()
+    sql = "select * from airnzaircraft order by no_of_aircraft desc;"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    print(f"{'Name':<20}{'passengers':<15}{'Range':<15}{'Speed':<12}{'no of planes':<12}")
+    for airnzaircraft in results:
+        print(f"{airnzaircraft[1]:<20}"f"{airnzaircraft[2]:<15}"f"{airnzaircraft[3]:<15}"f"{airnzaircraft[4]:<12}"f"{airnzaircraft[8]:<12}")
+    db.close()
 
-data = input("What would you like to learn about Air NZ planes?\n1. print all aircraft\n2. print aircraft by speed\n3. print all aircraft by the highest amount in the fleet\n4. help\n5. leave\n")
+
+data = input("What would you like to learn about Air NZ planes?\n1. print all aircraft\n2. print aircraft by speed\n3. print all aircraft by the highest amount in the fleet\n4. help\n5. find out the most useful knowledge\n6. exit\n")
 if data == "1":
     print_all_aircraft()
 elif data == "2":
@@ -53,6 +65,8 @@ elif data == "3":
 elif data == "4":
     print('Name - Name of aircraft\n pax_capacity - how many passenger the aircraft can hold defined by the amount of seats\n range - aircrafts range in kilometers\n cruising_speed - the speed the aircraft usually flies at in knots at cruising altitude\n max_takeoff_weight - the maximum weight the aircraft can be when taking off in kg\n takeoff_speed - the speed the aircraft needs to reach to take off in knots\n landing_speed - minimum speed to lands in knots\n no_of_aircraft - how many of this type of plane are in the airnz fleet')
 elif data == "5":
+    common_info()
+elif data == "6":
     print("goodbye")
 
 
