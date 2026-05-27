@@ -12,8 +12,9 @@ def print_all_aircraft():
     sql = "select * from airnzaircraft;"
     cursor.execute(sql)
     results = cursor.fetchall()
+    print(f"{'Name':<20}"f"{'passengers':<15}"f"{'Range':<15}"f"{'Speed':<12}"f"{'Max weight':<12}"f"{'takeoff speed':<15}"f"{'land speed':<12}"f"{'no of planes':<12}")
     for airnzaircraft in results:
-        print(f"{airnzaircraft[1]:<20}"f"{airnzaircraft[2]:<8}"f"{airnzaircraft[3]:<8}"f"{airnzaircraft[4]:<8}"f"{airnzaircraft[5]:<8}"f"{airnzaircraft[6]:<5}"f"{airnzaircraft[7]:<5}"f"{airnzaircraft[8]:<5}")
+        print(f"{airnzaircraft[1]:<20}"f"{airnzaircraft[2]:<15}"f"{airnzaircraft[3]:<15}"f"{airnzaircraft[4]:<12}"f"{airnzaircraft[5]:<12}"f"{airnzaircraft[6]:<15}"f"{airnzaircraft[7]:<12}"f"{airnzaircraft[8]:<12}")
     db.close()
 
 
